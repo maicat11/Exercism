@@ -14,7 +14,6 @@ class HangmanTests(unittest.TestCase):
 
     def test_initially_no_letters_are_guessed(self):
         game = Hangman('foo')
-
         self.assertEqual(game.get_masked_word(), '___')
 
     def test_after_10_failures_the_game_is_over(self):
