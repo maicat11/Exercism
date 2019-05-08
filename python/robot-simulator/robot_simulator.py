@@ -1,9 +1,8 @@
 # Globals for the bearings
-# Change the values as you see fit
-EAST = 'east'
-NORTH = 'north'
-WEST = 'west'
-SOUTH = 'south'
+NORTH = 0
+EAST = 1
+SOUTH = 2
+WEST = 3
 
 
 class Robot(object):
@@ -12,24 +11,10 @@ class Robot(object):
         self.bearing = bearing
 
     def turn_right(self):
-        if self.bearing == EAST:
-            self.bearing = SOUTH
-        elif self.bearing == SOUTH:
-            self.bearing = WEST
-        elif self.bearing == WEST:
-            self.bearing = NORTH
-        else:
-            self.bearing = EAST
+        self.bearing = (self.bearing + 1) % 4
 
     def turn_left(self):
-        if self.bearing == EAST:
-            self.bearing = NORTH
-        elif self.bearing == SOUTH:
-            self.bearing = EAST
-        elif self.bearing == WEST:
-            self.bearing = SOUTH
-        else:
-            self.bearing = WEST
+        self.bearing = (self.bearing - 1) % 4
 
     def advance(self):
         if self.bearing == NORTH:
