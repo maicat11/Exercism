@@ -19,17 +19,17 @@ def balanced(p_set):
 # Given an expression string, write a python program to find whether a
 # given string has balanced grouping symbols or not.
 
-# def balanced_brackets(string):
-#     bracket_dict = {'(': ')', '[': ']', '{': '}'}
-#     stack = []
-#
-#     for s in string:
-#         if s in bracket_dict.keys():
-#             stack.append(bracket_dict[s])
-#         elif s in bracket_dict.values():
-#             if stack == [] or s != stack.pop():
-#                 return False
-#     return stack == []
+def balanced_brackets(string):
+    bracket_dict = {'(': ')', '[': ']', '{': '}'}
+    stack = []
+
+    for s in string:
+        if s in bracket_dict.keys():
+            stack.append(bracket_dict[s])
+        elif s in bracket_dict.values():
+            if stack == [] or s != stack.pop():
+                return False
+    return stack == []
 #
 #     # brackets = ['()', '[]', '{}']
 #     # while [x in string for x in brackets] != []:
@@ -96,5 +96,20 @@ def twoSum(nums, target):
         else:
             store[num] = i
 
-print(twoSum([3,2,4], 6))
+# print(twoSum([3,2,4], 6))
 
+
+# find the kth most frequent item in the list
+def k_most_freq(item_list, k):
+    D = defaultdict(int)
+    for item in item_list:
+        D[item] += 1
+
+    items = []
+    for key, val in D.items():
+        items.append((val, key))
+
+    return sorted(items, reverse=True)[1]
+
+
+print(k_most_freq(['a', 'b', 'a', 'r', 'g', 'd', 'a', 'd', 'b', 'r', 'r', 'a'], 2))
