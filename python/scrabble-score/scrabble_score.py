@@ -8,3 +8,5 @@ POINTS = {'AEIOULNRST': 1,
           }
 def score(word):
     return sum([v for k, v in POINTS.items() for l in word if l.upper() in k])
+
+
