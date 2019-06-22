@@ -1,6 +1,5 @@
 from math import sqrt
 
-
 def score(x, y):
     z = sqrt(x**2 + y**2)
     if z <= 1:
