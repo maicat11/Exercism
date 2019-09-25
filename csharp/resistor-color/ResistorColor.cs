@@ -3,16 +3,15 @@ using System.Collections.Generic;
 
 public static class ResistorColor
 {
-    private static String[] color_map = new String[] {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+    private static String[] colorMap = new String[] {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
 
     public static int ColorCode(string color)
     {
-        return Array.IndexOf(color_map, color);
+        return Array.IndexOf(colorMap, color);
     }
     public static string[] Colors()
     {
-        return color_map;
+        return colorMap;
     }
 }
 
-// String[] stringarr = new String[] {"Geeks", "GFG", "Noida"};
