@@ -47,7 +47,7 @@ public class GrainsTest
         Assert.Equal(9223372036854775808UL, Grains.Square(64));
     }
 
-    [Fact]
+    [Fact]  
     public void Square_0_raises_an_exception()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => Grains.Square(0));
